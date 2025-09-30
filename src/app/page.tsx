@@ -7,10 +7,12 @@ import { BookOpen, GitBranch, Users, Calendar, MessageSquare, Youtube, Github, G
 export default function Home() {
   const teamMembers = [
     {
-      name: "Benjamin Torres",
-      role: "Fundador & Lead Developer",
-      description: "Experto en automatización empresarial e integraciones complejas con n8n",
-      avatar: "BT",
+      name: "Luis Miguel Giraldo González",
+      role: "Founder de n8n Seniority 🎩",
+      description: "AI-FIRST | Me encanta contribuir a la adopción de AI en empresas y en la comunidad hispanohablante",
+      image: "/luis-miguel.jpg",
+      linkedin: "https://www.linkedin.com/in/luisgiraldo-ai/",
+      featured: true,
     },
     {
       name: "María González",
@@ -238,20 +240,48 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#FF6D5A]/50 transition-all text-center"
+                className={`bg-white/[0.03] border rounded-2xl p-8 hover:border-[#FF6D5A]/50 transition-all text-center ${
+                  member.featured
+                    ? 'border-[#FF6D5A]/30 md:col-span-3 md:max-w-md md:mx-auto'
+                    : 'border-white/10'
+                }`}
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-[#FF6D5A] to-[#FF5542] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  {member.avatar}
-                </div>
+                {member.image ? (
+                  <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#FF6D5A]">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#FF6D5A] to-[#FF5542] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                    {member.avatar}
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-2">
                   {member.name}
                 </h3>
                 <p className="text-[#FF6D5A] font-medium mb-4 text-sm">
                   {member.role}
                 </p>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   {member.description}
                 </p>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#FF6D5A] hover:text-[#FF5542] transition-colors text-sm font-medium"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Ver perfil en LinkedIn
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
