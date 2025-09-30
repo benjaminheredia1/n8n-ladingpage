@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:n8n.io)",
+      "Bash(npm install:*)",
+      "Bash(move:*)",
+      "Bash(Copy-Item:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,102 +1,364 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { BookOpen, GitBranch, Users, Calendar, MessageSquare, Youtube, Github, Globe } from 'lucide-react';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const teamMembers = [
+    {
+      name: "Benjamin Torres",
+      role: "Fundador & Lead Developer",
+      description: "Experto en automatización empresarial e integraciones complejas con n8n",
+      avatar: "BT",
+    },
+    {
+      name: "María González",
+      role: "Technical Architect",
+      description: "Especialista en desarrollo de nodos personalizados y arquitecturas escalables",
+      avatar: "MG",
+    },
+    {
+      name: "Carlos Ramírez",
+      role: "Community Lead",
+      description: "Organización de eventos, workshops y crecimiento de la comunidad hispana",
+      avatar: "CR",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const features = [
+    {
+      title: "Recursos en Español",
+      description: "Tutoriales, documentación y guías completamente en español para facilitar tu aprendizaje",
+      icon: BookOpen,
+    },
+    {
+      title: "Workflows Compartidos",
+      description: "Accede a una biblioteca de workflows probados y listos para implementar en tu negocio",
+      icon: GitBranch,
+    },
+    {
+      title: "Soporte de la Comunidad",
+      description: "Resuelve dudas y aprende de la experiencia de otros miembros activos",
+      icon: Users,
+    },
+    {
+      title: "Eventos y Workshops",
+      description: "Sesiones en vivo, masterclasses y meetups para conectar y aprender juntos",
+      icon: Calendar,
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0E0918] text-white">
+      {/* Navigation */}
+      <nav className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Image src="/logo.png" alt="n8n Seniority" width={50} height={50} className="rounded-lg" />
+              <span className="text-xl font-bold hidden sm:block">n8n Seniority</span>
+            </div>
+            <div className="hidden md:flex gap-8 text-sm">
+              <a href="#caracteristicas" className="hover:text-[#FF6D5A] transition-colors">
+                Características
+              </a>
+              <a href="#comunidad" className="hover:text-[#FF6D5A] transition-colors">
+                Comunidad
+              </a>
+              <a href="#miembros" className="hover:text-[#FF6D5A] transition-colors">
+                Equipo
+              </a>
+            </div>
+            <a
+              href="#comunidad"
+              className="bg-[#FF6D5A] hover:bg-[#FF5542] px-6 py-2 rounded-lg font-medium transition-colors text-sm"
+            >
+              Únete
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-20 md:py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/logo.png"
+              alt="n8n Seniority Logo"
+              width={330}
+              height={330}
+              className="mx-auto mb-8"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm"
           >
-            Read our docs
-          </a>
+            <Globe className="w-4 h-4" />
+            Comunidad hispana oficial de n8n
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+          >
+            Automatiza sin límites
+            <br />
+            <span className="text-[#FF6D5A]">en español</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            Únete a la comunidad hispanohablante de n8n donde compartimos conocimientos,
+            workflows y construimos el futuro de la automatización juntos.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex gap-4 justify-center flex-wrap"
+          >
+            <a
+              href="#comunidad"
+              className="px-8 py-4 bg-[#FF6D5A] hover:bg-[#FF5542] rounded-lg font-semibold transition-all hover:scale-105"
+            >
+              Únete a la Comunidad
+            </a>
+            <a
+              href="#caracteristicas"
+              className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-lg font-semibold transition-all"
+            >
+              Explorar Recursos
+            </a>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Stats Section */}
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="container mx-auto px-6 py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: '500+', label: 'Miembros activos' },
+              { value: '150+', label: 'Workflows compartidos' },
+              { value: '50+', label: 'Tutoriales en español' },
+              { value: '12', label: 'Países representados' }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="text-4xl font-bold text-[#FF6D5A] mb-2">{stat.value}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="caracteristicas" className="container mx-auto px-6 py-20 md:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Todo lo que necesitas para dominar n8n
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Recursos, soporte y una comunidad activa para impulsar tus proyectos de automatización
+          </p>
+        </motion.div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] hover:border-[#FF6D5A]/50 transition-all"
+              >
+                <Icon className="w-8 h-8 text-[#FF6D5A] mb-4" />
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-[#FF6D5A] transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="miembros" className="border-y border-white/10 bg-white/[0.02]">
+        <div className="container mx-auto px-6 py-20 md:py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Conoce al equipo
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Profesionales apasionados por n8n y dedicados a hacer crecer la comunidad hispana
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#FF6D5A]/50 transition-all text-center"
+              >
+                <div className="w-24 h-24 bg-gradient-to-br from-[#FF6D5A] to-[#FF5542] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                  {member.avatar}
+                </div>
+                <h3 className="text-xl font-bold mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-[#FF6D5A] font-medium mb-4 text-sm">
+                  {member.role}
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {member.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section id="comunidad" className="container mx-auto px-6 py-20 md:py-32">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Únete a la comunidad
+            </h2>
+            <p className="text-xl text-gray-400">
+              Conecta con cientos de profesionales y entusiastas de n8n en toda Latinoamérica y España
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: MessageSquare, title: 'Discord', desc: 'Chat en tiempo real, canales especializados y eventos exclusivos', cta: 'Unirse' },
+              { icon: Youtube, title: 'YouTube', desc: 'Tutoriales, workshops grabados y casos de uso reales', cta: 'Ver videos' },
+              { icon: Github, title: 'GitHub', desc: 'Workflows, templates y recursos open source', cta: 'Explorar' }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.a
+                  key={index}
+                  href="#"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] hover:border-[#FF6D5A]/50 transition-all block"
+                >
+                  <Icon className="w-10 h-10 text-[#FF6D5A] mb-4" />
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{item.desc}</p>
+                  <span className="text-[#FF6D5A] text-sm font-medium">{item.cta} →</span>
+                </motion.a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="border-y border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="container mx-auto px-6 py-20 text-center"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            ¿Listo para automatizar?
+          </h2>
+          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+            Únete a cientos de profesionales que ya están transformando sus procesos con n8n
+          </p>
+          <a
+            href="#comunidad"
+            className="inline-block px-10 py-4 bg-[#FF6D5A] hover:bg-[#FF5542] rounded-lg font-semibold transition-all hover:scale-105 text-lg"
+          >
+            Comenzar Ahora
+          </a>
+        </motion.div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10">
+        <div className="container mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-3 mb-2">
+                <Image src="/logo.png" alt="n8n Seniority" width={32} height={32} className="rounded-lg" />
+                <span className="text-xl font-bold">n8n Seniority</span>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Comunidad hispana oficial de n8n
+              </p>
+            </div>
+            <div className="flex gap-8 text-sm">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                Discord
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                YouTube
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                GitHub
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
+            © 2025 n8n Seniority. Una comunidad independiente para usuarios de n8n.
+          </div>
+        </div>
       </footer>
     </div>
   );
