@@ -38,7 +38,7 @@ export default function Home() {
     {
       name: "Nicolas Emir Mejia Agreda",
       role: "Data Analyst",
-      description: "Data Analyst especializado en BI con dominio completo del stack: SQL, R, Python, Power BI, Tableau y Excel. Experto en automatización con n8n e IA. Magíster en Liderazgo y Comunicación Estratégica.",
+      description: "Data Analyst especializado en BI con dominio completo del stack: SQL, R, Python, Power BI, Tableau y Excel. Experto en automatización con n8n e IA. ",
       linkedin: "https://www.linkedin.com/in/nicolas-mejia-agreda/",
       image: "/nicolas.png",
     },
@@ -186,7 +186,7 @@ export default function Home() {
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '500+', label: 'Miembros activos' },
+              { value: '1500+', label: 'Miembros activos' },
               { value: '150+', label: 'Workflows compartidos' },
               { value: '50+', label: 'Tutoriales en español' },
               { value: '12', label: 'Países representados' }
