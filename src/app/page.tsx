@@ -14,18 +14,50 @@ export default function Home() {
       linkedin: "https://www.linkedin.com/in/luisgiraldo-ai/",
       featured: true,
     },
-    {
-      name: "María González",
-      role: "Technical Architect",
-      description: "Especialista en desarrollo de nodos personalizados y arquitecturas escalables",
-      avatar: "MG",
+        {
+      name: "Juan Vela",
+      role: "Community Leader",
+      description: "Líder comunitario apasionado por conectar desarrolladores hispanohablantes. Facilitador de conocimiento y mentor en automatización con n8n e IA.",
+      image: "/Juanca.png",
+      linkedin: "https://www.linkedin.com/in/pablo-benjamin-heredia-ruiz-843a471b7/",
     },
     {
-      name: "Carlos Ramírez",
+      name: "Benjamin Heredia",
+      role: "Technical community leader",
+      description: "Desarrollador Full Stack especializado en automatización e IA. Creador de workflows inteligentes y soluciones de integración avanzadas con n8n.",
+      image: "/Benjamin.png",
+      linkedin: "https://www.linkedin.com/in/pablo-benjamin-heredia-ruiz-843a471b7/",
+    },
+    {
+      name: "Cristóbal Mujica Rojas ",
       role: "Community Lead",
-      description: "Organización de eventos, workshops y crecimiento de la comunidad hispana",
-      avatar: "CR",
+      description: "Analista BI Senior | Magíster en Liderazgo, Dirección y Comunicación Estratégica",
+      linkedin: "https://www.linkedin.com/in/crist%C3%B3bal-mujica-rojas-89720316/",
+      image: "/image.png",
     },
+    {
+      name: "Nicolas Emir Mejia Agreda",
+      role: "Data Analyst",
+      description: "Data Analyst especializado en BI con dominio completo del stack: SQL, R, Python, Power BI, Tableau y Excel. Experto en automatización con n8n e IA. Magíster en Liderazgo y Comunicación Estratégica.",
+      linkedin: "https://www.linkedin.com/in/nicolas-mejia-agreda/",
+      image: "/nicolas.png",
+    },
+    {
+      name: "Yordis Bayeux",
+      role: "Consultor en Inteligencia Artificial y Automatización de Procesos",
+      description: "Apasionado, amigable y curioso. Me encanta la inteligencia artificial y la automatización para optimizar procesos y flujos, transformando ideas en sistemas que funcionan solos y te devuelven libertad de tiempo.",
+      linkedin: "https://www.linkedin.com/in/jesusdavidpater/",
+      image: "/jesus.png",
+    },
+
+    {
+      name: "Jesus David ",
+      role: "Business Transformation Analyst",
+      description: "Ayudo a Transformar el Caos en Estrategia, Ideas en Impacto y Tecnología en Oportunidades Reales con Innovación automatica e IA",
+      linkedin: "https://www.linkedin.com/in/electox/",
+      image: "/yordis.png",
+    },
+
   ];
 
   const features = [
