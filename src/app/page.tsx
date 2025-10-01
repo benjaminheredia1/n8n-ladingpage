@@ -18,7 +18,7 @@ export default function Home() {
       name: "Juan Vela",
       role: "Community Leader",
       description: "Líder comunitario apasionado por conectar desarrolladores hispanohablantes. Facilitador de conocimiento y mentor en automatización con n8n e IA.",
-      image: "/Juanca.png",
+      image: "/juanca.png",
       linkedin: "https://www.linkedin.com/in/pablo-benjamin-heredia-ruiz-843a471b7/",
     },
     {
