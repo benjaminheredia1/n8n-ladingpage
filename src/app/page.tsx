@@ -289,7 +289,6 @@ export default function Home() {
                   </div>
                 ) : (
                   <div className="w-24 h-24 bg-gradient-to-br from-[#FF6D5A] to-[#FF5542] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                    {member.avatar}
                   </div>
                 )}
                 <h3 className="text-xl font-bold mb-2">
