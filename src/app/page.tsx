@@ -47,7 +47,7 @@ export default function Home() {
       role: "Consultor en Inteligencia Artificial y Automatización de Procesos",
       description: "Apasionado, amigable y curioso. Me encanta la inteligencia artificial y la automatización para optimizar procesos y flujos, transformando ideas en sistemas que funcionan solos y te devuelven libertad de tiempo.",
       linkedin: "https://www.linkedin.com/in/jesusdavidpater/",
-      image: "/jesus.png",
+      image: "/yordis.png",
     },
 
     {
@@ -55,7 +55,7 @@ export default function Home() {
       role: "Business Transformation Analyst",
       description: "Ayudo a Transformar el Caos en Estrategia, Ideas en Impacto y Tecnología en Oportunidades Reales con Innovación automatica e IA",
       linkedin: "https://www.linkedin.com/in/electox/",
-      image: "/yordis.png",
+      image: "/jesus.png",
     },
 
   ];
