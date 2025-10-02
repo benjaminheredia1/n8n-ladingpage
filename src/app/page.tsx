@@ -57,6 +57,14 @@ export default function Home() {
       linkedin: "https://www.linkedin.com/in/electox/",
       image: "/jesus.png",
     },
+    
+    {
+      name: "José Escobar",
+      role: "Business Transformation ",
+      description: "Estratega Digital | Diseñador Web Profesional | Asesor de IA aplicada para Negocios | Experto en Automatización Inteligente.",
+      linkedin: "https://www.linkedin.com/in/jos%C3%A9-escobar-3787b1157?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/jose.png",
+    },
 
   ];
 
