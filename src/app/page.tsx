@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BookOpen, GitBranch, Users, Calendar, MessageSquare, Youtube, Github, Globe } from 'lucide-react';
+import { BookOpen, GitBranch, Users, Calendar, MessageSquare, Youtube, Github, Globe, MessageCircle } from 'lucide-react';
 
 export default function Home() {
   const teamMembers = [
@@ -146,7 +146,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm"
           >
             <Globe className="w-4 h-4" />
-            Comunidad hispana oficial de n8n
+            Comunidad hispana  de n8n
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -344,17 +344,18 @@ export default function Home() {
               Conecta con cientos de profesionales y entusiastas de n8n en toda Latinoamérica y España
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: MessageSquare, title: 'Discord', desc: 'Chat en tiempo real, canales especializados y eventos exclusivos', cta: 'Unirse' },
-              { icon: Youtube, title: 'YouTube', desc: 'Tutoriales, workshops grabados y casos de uso reales', cta: 'Ver videos' },
-              { icon: Github, title: 'GitHub', desc: 'Workflows, templates y recursos open source', cta: 'Explorar' }
+              { icon: MessageSquare, title: 'Discord', desc: 'Chat en tiempo real, canales especializados y eventos exclusivos', cta: 'Unirse', href: 'https://discord.gg/mMJBMKdv' },
+              { icon: MessageCircle, title: 'WhatsApp', desc: 'Grupo de WhatsApp para consultas rápidas y networking', cta: 'Unirse', href: '#' }
             ].map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -406,21 +407,15 @@ export default function Home() {
                 <span className="text-xl font-bold">n8n Seniority</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Comunidad hispana oficial de n8n
+                Comunidad hispana  de n8n
               </p>
             </div>
             <div className="flex gap-8 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://discord.gg/mMJBMKdv" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Discord
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                YouTube
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                GitHub
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Twitter
+              <a href="https://chat.whatsapp.com/LTxvjqtDw9hF3OIxUXPCQB" className="text-gray-400 hover:text-white transition-colors">
+                WhatsApp
               </a>
             </div>
           </div>
