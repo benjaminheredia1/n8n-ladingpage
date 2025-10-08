@@ -344,10 +344,11 @@ export default function Home() {
               Conecta con cientos de profesionales y entusiastas de n8n en toda Latinoamérica y España
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: MessageSquare, title: 'Discord', desc: 'Chat en tiempo real, canales especializados y eventos exclusivos', cta: 'Unirse', href: 'https://discord.gg/mMJBMKdv' },
-              { icon: MessageCircle, title: 'WhatsApp', desc: 'Grupo de WhatsApp para consultas rápidas y networking', cta: 'Unirse', href: '#' }
+              { icon: MessageCircle, title: 'WhatsApp', desc: 'Grupo de WhatsApp para consultas rápidas y networking', cta: 'Unirse', href: 'https://chat.whatsapp.com/LTxvjqtDw9hF3OIxUXPCQB' },
+              { icon: Youtube, title: 'YouTube', desc: 'Tutoriales, workshops grabados y casos de uso reales', cta: 'Ver videos', href: 'https://www.youtube.com/@n8nSeniority' },
             ].map((item, index) => {
               const Icon = item.icon;
               return (
@@ -416,6 +417,9 @@ export default function Home() {
               </a>
               <a href="https://chat.whatsapp.com/LTxvjqtDw9hF3OIxUXPCQB" className="text-gray-400 hover:text-white transition-colors">
                 WhatsApp
+              </a>
+              <a href="https://www.youtube.com/@n8nSeniority" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                YouTube
               </a>
             </div>
           </div>
