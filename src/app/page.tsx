@@ -3,8 +3,14 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BookOpen, GitBranch, Users, Calendar, MessageSquare, Youtube, Github, Globe, MessageCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const teamMembers = [
     {
       name: "Luis Miguel Giraldo González",
@@ -98,18 +104,24 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Image src="/logo.png" alt="n8n Seniority" width={50} height={50} className="rounded-lg" />
+              <Image src="/logo.jpeg" alt="n8n Seniority" width={50} height={50} className="rounded-lg" />
               <span className="text-xl font-bold hidden sm:block">n8n Seniority</span>
             </div>
             <div className="hidden md:flex gap-8 text-sm">
               <a href="#caracteristicas" className="hover:text-[#FF6D5A] transition-colors">
                 Características
               </a>
+              <a href="#eventos" className="hover:text-[#FF6D5A] transition-colors">
+                Próximos Eventos
+              </a>
               <a href="#comunidad" className="hover:text-[#FF6D5A] transition-colors">
                 Comunidad
               </a>
-              <a href="#miembros" className="hover:text-[#FF6D5A] transition-colors">
+              {/* <a href="#miembros" className="hover:text-[#FF6D5A] transition-colors">
                 Equipo
+              </a> */}
+              <a href="/politicas-comunidad" className="hover:text-[#FF6D5A] transition-colors">
+                Políticas comunidad
               </a>
             </div>
             <a
@@ -131,7 +143,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/logo.png"
+              src="/logo.jpeg"
               alt="n8n Seniority Logo"
               width={330}
               height={330}
@@ -255,7 +267,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Events Section */}
+      <section id="eventos" className="border-y border-white/10 bg-white/[0.02]">
+        <div className="container mx-auto px-6 py-20 md:py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Próximos Eventos
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Únete a nuestros eventos, workshops y meetups para aprender y conectar con la comunidad
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex justify-center"
+          >
+            {isMounted ? (
+              <iframe
+                src="https://luma.com/embed/calendar/cal-IJ5L0ElbvleGFM3/events"
+                width="600"
+                height="450"
+                frameBorder="0"
+                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                allowFullScreen
+                aria-hidden="false"
+                tabIndex={0}
+                className="w-full max-w-[600px]"
+              />
+            ) : (
+              <div 
+                className="w-full max-w-[600px] h-[450px] bg-white/[0.03] border border-white/10 rounded-lg flex items-center justify-center"
+                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+              >
+                <p className="text-gray-400">Cargando calendario...</p>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section
       <section id="miembros" className="border-y border-white/10 bg-white/[0.02]">
         <div className="container mx-auto px-6 py-20 md:py-32">
           <motion.div
@@ -325,7 +385,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Community Section */}
       <section id="comunidad" className="container mx-auto px-6 py-20 md:py-32">
@@ -404,7 +464,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col items-center md:items-start">
               <div className="flex items-center gap-3 mb-2">
-                <Image src="/logo.png" alt="n8n Seniority" width={32} height={32} className="rounded-lg" />
+                <Image src="/logo.jpeg" alt="n8n Seniority" width={32} height={32} className="rounded-lg" />
                 <span className="text-xl font-bold">n8n Seniority</span>
               </div>
               <p className="text-gray-400 text-sm">

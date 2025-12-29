@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "n8n Seniority - Comunidad Hispana de n8n",
   description: "Comunidad hispanohablante de n8n para compartir conocimientos, workflows y experiencias",
+  icons: {
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 };
 
 export default function RootLayout({
